@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>	
+	<script type="text/javascript" src="resource/js/admin.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/adminhome.css">
+</head>
+<body ng-controller="AdminController">
+	<div ng-include="'allheader.html'"> </div>
+	
+
+	<main>
+		<div class="homeDescriptionContainer">
+			 <p id="welcome"> Welcome <span>{{firstName}}</span>  !!</p>
+			<form name="patientDetails" ng-submit="getPatienData()">
+				<button type="submit" type="button" class="btn btn-info" data-toggle="collapse" data-target="#patientContainer">View all patient's appointment data</button>
+
+				<br><br>
+				<div id="patientContainer" class="container" ng-show="patientList.length">
+				<table id="patientTbl" class="table table-bordered marginTop14" >
+					<thead>
+						<tr>							
+							<th>FirstName</th>
+							<th>Specialist</th>
+							<th>Appointment_Date</th>
+							<th>Appointment_Time</th>
+							<th>Problem_Description</th>
+							<th>Comments</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="detail in patientList">
+							<td><span id="pat-firstname">{{detail.map.patientName}}</span></td>
+							<td><span id="pat-Specialist">{{detail.map.specialist}}</span></td>
+							<td><span id="pat-ADate">{{detail.map.appointment_Date}}</span></td>
+							<td><span id="pat-ATime">{{detail.map.appointment_Time}}</span></td>
+							<td><span id="pat-ProbDesc">{{detail.map.problem_Description}}</span></td>
+							<td><span id="pat-Comments">{{detail.map.comments}}</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</form>
+			<form name="doctorDetails" ng-submit="getDoctorData()">
+			
+			<button type="submit" type="button" class="btn btn-info" data-toggle="collapse" data-target="#doctorContainer">View Doctor's List</button>
+			
+			<div id="doctorContainer" class="container" ng-show="doctorList.length">
+				<table id="doctorTbl" class="table table-bordered marginTop14" border=1>
+					<thead>
+						<tr>							
+							<th>DoctorName</th>
+							<th>Email</th>
+							<th>Contact</th>
+							<th>Gender</th>
+							</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="details in doctorList">
+							<td><span id="pat-doctorName">{{details.map.firstName}}</span></td>
+							<td><span id="pat-email">{{details.map.email}}</span></td>
+							<td><span id="pat-contact">{{details.map.contact}}</span></td>
+							<td><span id="pat-gender">{{details.map.gender}}</span></td>
+						<tr>
+					</tbody>
+				</table>	
+				</div>			
+			</form>
+		</div >
+	</main>
+	<div ng-include="'footer.html'"> </div>
+</body>
+</html>

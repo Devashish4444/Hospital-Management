@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>	
+	<script type="text/javascript" src="resource/js/login.js"></script>	
+
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/login.css">	
+</head>
+
+<body ng-controller="LoginController">
+	<div ng-include="'head.html'"> </div>
+	
+	<main>
+		<div class="homeDescriptionContainer">
+			<p id="loginheader">Login Page</p>
+			<div >
+
+				<form id="personForm" ng-submit="sendData()">
+
+					<label>User Name:<input type="text" ng-model="username"/></label>
+
+					<label>Password:<input type="password" ng-model="password"/></label>
+
+					<button type="submit">Login</button> <br></br>
+
+					  <span style="color: red">{{errorMessage}}</span>
+				</form>
+			</div>
+		</div>
+		</main>
+	<div ng-include="'footer.html'"> </div>  
+</body>
+
+</html>

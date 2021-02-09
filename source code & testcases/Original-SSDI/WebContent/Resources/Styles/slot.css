@@ -1,0 +1,167 @@
+.signup {    
+   
+     padding: 4px 3px;     
+     background-color: #ffffff;
+}
+    
+.signup a{
+       
+     color: #003366;
+     font-size: 16px;
+     text-decoration: underline;
+	 padding-left: 1200px;
+	 text-align: right;
+} 
+
+.header{
+    background-color: #ffffff;
+    height: 90px;  
+}
+
+.header img {
+   float: left;
+    width: 110px;
+    height: 70px;
+    margin-top: 5px;
+    margin-left: 450px;
+}
+
+.header h1 {
+    color: #A6B436;
+    padding-top:20px;
+    padding-bottom: 10px;
+    position: relative;
+    font-family: Aleo Regular,Palatino Linotype,Palatino;
+}    
+
+.generalsite {
+    
+    overflow: hidden;
+    background-color: #A6B436;
+    padding: 10px 5px;
+    height: 25px;
+}
+
+.generalsite a {
+    
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    float: left;
+    padding-left:20px; padding-right: 20px;
+    padding-bottom: 7px;
+    font-weight: bold;
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.generalsite a:hover {
+    
+  text-decoration: underline;
+  background-color: #cccccc;
+  color: black;
+}
+
+body{   
+    width: 100%;
+    height: 500px;
+    margin-left: auto;
+    margin-top: auto;
+    background-color:white ;
+}
+
+.homeDescriptionContainer {
+    
+    height: 400px;
+    display: block;
+    margin-left:10px;margin-top:5px;
+    font-family:Aleo Regular,Palatino Linotype,Palatino;
+    float: left;
+    font-size: 16px;
+}
+
+#welcome{
+    
+    text-align: left;
+    color: brown;
+    padding-left: 50px;
+}
+ 
+.imageContainer img{
+     float: left;
+	height: 170px;
+    width: 170px;
+	margin-top: 30px;
+	padding-right: 20px;
+	padding-left: 30px;
+            
+}
+
+#content{
+		
+      padding-left:300px;
+      padding-top: 30px;
+      font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;  
+
+}
+
+.indexfooterContainer p{
+    font-family:Aleo Regular,Palatino Linotype,Palatino;
+    float: right;
+}
+
+.indexfooterContainer a{
+    font-family:Aleo Regular,Palatino Linotype,Palatino;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+	padding-left: 20px;
+}
+
+.indexfooterContainer{
+    
+    clear: both;
+    height: 40px;
+    background-color:#A6B436 ;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 10px; 
+}
+label{
+	display: inline-block;
+}
+#slotForm{
+	padding-left: 50px;
+}
+#slotForm label{
+	
+	margin-left: 30px;
+	
+}
+button {
+   
+    margin-top: 90px;
+    margin-left: 30px;
+	padding: 5px;
+	width:90px;
+	height:40px;
+	border-radius: 4px;
+	border: none;
+    background-color:lightgrey;
+    font-size:13px;
+    
+}
+#message{
+	padding-left: 35px; 
+	font-weight:bold; 
+	font-size:18px;
+	margin-left:20px;	
+	color: brown;
+} 
+
+#TimeSlot{
+	width:100px;
+}
+
+#note{
+	padding-left: 55px; 
+}

@@ -1,0 +1,16 @@
+.contactContainer{
+
+  height: 355px;
+  padding-left: 450px;
+  padding-top:40px;
+  padding-bottom:20px;
+  margin-left:50px;
+  margin-right:20px;
+  color: brown;
+}
+
+#contactHeader{
+
+  padding-bottom: 20px;
+  color: darkgreen;
+}

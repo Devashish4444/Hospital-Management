@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<title>Hospital</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+<script type="text/javascript" src="resource/js/doctorDetails.js"></script>
+     <link rel="stylesheet" type="text/css"
+	href="Resources/Styles/indexstyles.css">
+    <link rel="stylesheet" type="text/css"
+	href="Resources/Styles/doctorhome.css">
+</head>
+<body>
+	<div ng-include="'allheader.html'"></div>
+
+	<main>
+
+		<div class="homeDescriptionContainer">
+			<h4 id="welcome">Welcome {{data.firstName}} !!</h4>
+			<p id="message">Your regular timings are from 10:00 am - 12:00 pm and 01:00 pm - 04:00 pm</p>
+			<br>
+	
+		<button type="submit"
+			onclick="window.location.href = '/Original-SSDI/slot.html'">Update timings</button>
+		<br>
+		<form name="patientDetails" ng-submit="getPatienDataforDoctor()"
+			ng-controller="DoctorController">
+			<button type="submit">View patient's appointments</button>
+
+			<div id="patientContainer" class="container"
+				ng-show="patientList.length">
+				<table id="patientTbl" class="table table-bordered marginTop14"
+					border="1">
+					<thead>
+						<tr>
+							<th>FirstName</th>
+							<th>Appointment_Date</th>
+							<th>Appointment_Time</th>
+							<th>Problem_Description</th>
+							<th>Comments</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="detail in patientList">
+							<td><span id="pat-firstname">{{detail.map.patientName}}</span></td>
+							<td><span id="pat-ADate">{{detail.map.appointment_Date}}</span></td>
+							<td><span id="pat-ATime">{{detail.map.appointment_Time}}</span></td>
+							<td><span id="pat-ProbDesc">{{detail.map.problem_Description}}</span></td>
+							<td><span id="pat-Comments">{{detail.map.comments}}</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+	</div>
+	</main>
+	<div ng-include="'footer.html'"></div>
+</body>
+</html>

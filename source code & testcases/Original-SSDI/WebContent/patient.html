@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Hospital</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+        <script type="text/javascript" src="resource/js/bookAppointment.js"></script>
+
+     	<link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
+        <link rel="stylesheet" type="text/css" href="Resources/Styles/patienthome.css">
+    </head>
+    <body ng-controller="BookingController">
+        <div ng-include="'allheader.html'"> </div>
+               
+   <main>
+   <div class="homeDescriptionContainer">
+                <div id="welcome"> Welcome {{data.firstName}}!</div>
+			<button type="submit" onclick="window.location.href = '/Original-SSDI/bookAppointment.html'">Book my appointment</button><br>
+			<br>
+			
+			<form name="patientDetails" ng-submit="getMyAppointment()"  >
+				<button type="submit">View my Upcoming Appointment</button>
+               
+				<div id="patientContainer" class="container" ng-show="patientList.length">
+				<table id="patientTbl" class="table table-bordered marginTop14" border=1>
+					<thead>
+						<tr>							
+							<th>FirstName</th>
+							<th>DoctorName</th>
+							<th>Specialist</th>
+							<th>Appointment_Date</th>
+							<th>Appointment_Time</th>
+							<th>Problem_Description</th>
+							<th>Comments</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="detail in patientList">
+							<td><span id="pat-firstname">{{detail.map.patientName}}</span></td>
+							<td><span id="pat-firstname">{{detail.map.doctorName}}</span></td>
+							<td><span id="pat-Specialist">{{detail.map.specialist}}</span></td>
+							<td><span id="pat-ADate">{{detail.map.appointment_Date}}</span></td>
+							<td><span id="pat-ATime">{{detail.map.appointment_Time}}</span></td>
+							<td><span id="pat-ProbDesc">{{detail.map.problem_Description}}</span></td>
+							<td><span id="pat-Comments">{{detail.map.comments}}</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</form>
+			 </div> 		
+               
+        </main>         
+      <div ng-include="'footer.html'"> </div>        
+     </body>
+</html>

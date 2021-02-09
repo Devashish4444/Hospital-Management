@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<title>Hospital</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+<script type="text/javascript" src="resource/js/doctorDetails.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="Resources/Styles/indexstyles.css">
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+<body ng-controller="DoctorController">
+	<div ng-include="'allheader.html'"></div>
+	<main>
+		<div class="homeDescriptionContainer">
+			<h3>Set my Availability timings</h3>
+
+			<form name="updateavailability" ng-submit="updateAvailability()">
+
+				Date<input type="date" ng-model="Change_Date"
+					placeholder="yyyy-MM-dd" min="2019-11-01" max="2019-12-31" required>
+				From Time<input type="time" ng-model="Time_From"
+					placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required>
+				To Time<input type="time" ng-model="Time_To" placeholder="HH:mm:ss"
+					min="08:00:00" max="17:00:00" required> <br>
+				<button type="submit">Update Details</button>
+				<button type="submit"
+					onclick="window.location.href = '/Original-SSDI/doctor.html'">Back</button>
+
+				<span style="color: green">{{message}}</span>
+
+			</form>
+		</div>
+	</main>
+	<div ng-include="'footer.html'"></div>
+</body>
+
+</html>

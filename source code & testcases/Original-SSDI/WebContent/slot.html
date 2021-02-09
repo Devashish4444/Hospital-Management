@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<title>Hospital</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+<script type="text/javascript" src="resource/js/admin.js"></script>
+<link rel="stylesheet" type="text/css" href="Resources/Styles/slot.css">
+<script type="text/javascript" src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
+</head>
+<body>
+	<div ng-include="'allheader.html'"></div>
+
+	<main>
+
+		<div class="homeDescriptionContainer">
+			<p id="message">Manage your timings</p>
+<span id="note">Note: If you want to Delete the slots which are already booked by Patient.. Please Contact Admin!!</span>
+	         <br><br>
+			<form id="slotForm" name="slot" ng-controller="AdminController"
+				ng-submit="updateSlot()">
+
+				<label>Date <input type="date" ng-model="Appointment_Date"
+					placeholder="yyyy-MM-dd" min="2019-11-04" max="2019-12-31"  ng-change="getSlotList()" required></label><br><br>
+				<b>Delete the slot times when you are not available</b><br><br>
+				
+				<label>Time Slot</label>
+		  		<select id="TimeSlot" ng-model="Slot_Time" ng-options="value.map.appointment_Time  as value.map.appointment_Time for (key,value) in slotList" >
+          		<option value="value.map.appointment_Time for value in slotList">Select</option></select>
+          		<br>
+          
+				<button type="submit">Update Slot</button>
+				<button type="submit"
+					onclick="window.location.href = '/Original-SSDI/doctor.html'">Back</button><br>
+				<br> <span style="color: green">{{message}}</span>
+				<br>
+				
+							
+			</form>
+		</div>
+	</main>
+	<div ng-include="'footer.html'"></div>
+</body>
+</html>

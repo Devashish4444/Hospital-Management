@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Original-SSDI</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+<servlet>
+<servlet-name>LoginServlet</servlet-name>
+<servlet-class>com.login.controller.LoginServlet</servlet-class>
+<load-on-startup>1</load-on-startup>
+</servlet>
+<servlet>
+<servlet-name>RegisterServlet</servlet-name>
+<servlet-class>com.login.controller.RegisterServlet</servlet-class>
+<load-on-startup>2</load-on-startup>
+</servlet>
+<servlet>
+<servlet-name>BookAppointmentServlet</servlet-name>
+<servlet-class>com.login.controller.BookAppointmentServlet</servlet-class>
+<load-on-startup>3</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>LoginServlet</servlet-name>
+<url-pattern>/loginServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+<servlet-name>RegisterServlet</servlet-name>
+<url-pattern>/RegisterServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+<servlet-name>BookAppointmentServlet</servlet-name>
+<url-pattern>/BookAppointmentServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>PatientDetailsServlet</servlet-name>
+<servlet-class>com.login.controller.PatientDetailsServlet</servlet-class>
+<load-on-startup>3</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>PatientDetailsServlet</servlet-name>
+<url-pattern>/PatientDetailsServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>DoctorManageTimings</servlet-name>
+<servlet-class>com.login.controller.DoctorManageTimings</servlet-class>
+<load-on-startup>4</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>DoctorManageTimings</servlet-name>
+<url-pattern>/DoctorManageTimings</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>GetDoctorDetailsServlet</servlet-name>
+<servlet-class>com.login.controller.GetDoctorDetailsServlet</servlet-class>
+<load-on-startup>5</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>GetDoctorDetailsServlet</servlet-name>
+<url-pattern>/GetDoctorDetailsServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>SlotsServlet</servlet-name>
+<servlet-class>com.login.controller.SlotsServlet</servlet-class>
+<load-on-startup>7</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>SlotsServlet</servlet-name>
+<url-pattern>/SlotsServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>PatientListForDoctorServlet</servlet-name>
+<servlet-class>com.login.controller.PatientListForDoctorServlet</servlet-class>
+<load-on-startup>8</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>PatientListForDoctorServlet</servlet-name>
+<url-pattern>/PatientListForDoctorServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>PatientMyAppointmentServlet</servlet-name>
+<servlet-class>com.login.controller.PatientMyAppointmentServlet</servlet-class>
+<load-on-startup>9</load-on-startup>
+</servlet>
+<servlet-mapping>
+<servlet-name>PatientMyAppointmentServlet</servlet-name>
+<url-pattern>/PatientMyAppointmentServlet</url-pattern>
+</servlet-mapping>
+</web-app>

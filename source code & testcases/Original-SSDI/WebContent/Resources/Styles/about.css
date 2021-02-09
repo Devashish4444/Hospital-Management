@@ -1,0 +1,19 @@
+.aboutContainer{
+  height: 395px;
+  text-align: center;
+}
+
+#aboutHead{
+
+  padding-top:30px;
+  padding-bottom:10px;
+  color:brown;
+}
+
+.aboutContent{
+  padding-top:20px;
+  padding-bottom:10px;
+  margin-left:20px;
+  margin-right:20px;
+  color: purple;
+}

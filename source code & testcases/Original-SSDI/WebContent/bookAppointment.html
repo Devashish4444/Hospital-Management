@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Hospital</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="resource/js/angular_v1.6.0.js"></script>
+	<script type="text/javascript" src="resource/js/bookAppointment.js"></script>
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/indexstyles.css">
+	<link rel="stylesheet" type="text/css" href="Resources/Styles/bookappointment.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script type="text/javascript" src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
+</head>
+<body ng-controller="BookingController">
+	<div ng-include="'allheader.html'"> </div>
+	<main>
+		<div class="homeDescriptionContainer">
+			<p id="message">Book My Appointment</p>
+		<form id="bookApointmentForm" name="bookApointment" ng-submit="submitAppointment()" >
+          <div data-ng-init="onloadFun()">
+          <table>
+          <tr>
+          <td>Select Speciality</td>
+          <td><select id="speciality" ng-model="doctorssource" ng-options="speciality for (speciality, doctors) in specialities" 
+              ng-change="GetSelectedSpeciality()"><option value="select">Select</option></select></td>
+          </tr>
+          <tr>
+          <td>Select Doctor:</td>
+          <td><select id="doctor" ng-disabled="!doctorssource" ng-model="dcsource" ng-options="doctor for (doctor, doctorname) in doctorssource"
+          	  ng-change="GetSelectedDoctor()"><option value="">Select</option></select></td>
+          </tr>
+          </table>
+          </div> 
+          <table>
+          <tr>
+          <td>Date</td>
+          <td><input type="date" ng-model="Appointment_Date" placeholder="yyyy-MM-dd" min="2019-12-04" max="2019-12-31" ng-change="getSlotList()" required></td>
+		  </tr>
+		  <tr>
+		  <td>Time Slot</td>
+		  <td><select id="TimeSlot" ng-model="Appointment_Time" ng-options="value.map.appointment_Time  as value.map.appointment_Time for (key,value) in slotList" ng-change="GetSlotTime()">
+            <option value="value.map.appointment_Time for value in slotList">Select</option></select></td>
+          </tr>
+          <tr>
+          <td>Problem Description</td>
+          <td><textarea ng-model="Problem_Description" placeholder="Required" rows="4" cols="23"></textarea></td>
+          </tr>
+          <tr>
+		  <td>Comments</td>
+		  <td><textarea ng-model="Comments"  rows="4" cols="23"></textarea></td>
+		  </tr>
+		  </table>	
+		  <br>
+		  	<button type="submit" name ="mybutton" onsubmit="mybutton.disabled = true; return true;">Submit</button>
+			<button type="submit" onclick="window.location.href = '/Original-SSDI/patient.html'">Back</button>
+			<br>	
+			<span style="color: green">{{message}}</span>
+		</form>
+		</div>
+	</main>
+	<div ng-include="'footer.html'"> </div>
+</body>
+</html>
